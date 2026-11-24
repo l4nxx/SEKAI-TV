@@ -31,7 +31,7 @@ example Android Studio).
 
 `app/` is a small Python program that finds the Android TVs on the local network, lets you pick one,
 and installs or updates this theme on it over ADB, with a window drawn in the same colours. Ready-made
-builds for Windows, macOS and Linux are on the [Releases](https://github.com/lucasperrin3010-lang/SEKAI-TV/releases)
+builds for Windows, macOS and Linux are on the [Releases](https://github.com/l4nxx/SEKAI-TV/releases)
 page; [app/README.md](app/README.md) covers running and building it.
 
 ## What is not here

@@ -7,6 +7,9 @@ on:
   push:
     tags: ["v*"]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     strategy:
@@ -37,7 +40,7 @@ jobs:
         shell: bash
         run: |
           curl -fsSL -o theme/sekai-home.apk \
-            "https://github.com/lucasperrin3010-lang/SEKAI-TV/releases/latest/download/sekai-home.apk" \
+            "https://github.com/l4nxx/SEKAI-TV/releases/latest/download/sekai-home.apk" \
             || echo "No APK in the latest release; the app will download it at install time."
 
       - name: Build for Windows

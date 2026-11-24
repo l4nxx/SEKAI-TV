@@ -358,7 +358,7 @@ def theme_file(name: str) -> Path | None:
     return None
 
 
-APK_URL = ("https://github.com/lucasperrin3010-lang/SEKAI-TV/releases/latest/download/"
+APK_URL = ("https://github.com/l4nxx/SEKAI-TV/releases/latest/download/"
            "sekai-home.apk")
 
 
