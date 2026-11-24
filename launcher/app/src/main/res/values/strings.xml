@@ -172,33 +172,6 @@
     <string name="credits_font">Typeface</string>
     <string name="credits_disclaimer">Unofficial fan project, not affiliated with SEGA or Colorful Palette.</string>
 
-    <!-- Profile page (ProfileActivity): level, login bonus, missions, cards, favourite and titles. -->
-    <string name="profile_pill">Profile</string>
-    <string name="profile_level">Level %1$d</string>
-    <string name="profile_xp">%1$d / %2$d XP</string>
-    <string name="profile_bonus">Login bonus</string>
-    <string name="profile_bonus_claim">Claim today\'s bonus (+%1$d XP)</string>
-    <string name="profile_bonus_done">Bonus claimed today</string>
-    <string name="profile_bonus_streak">Day %1$d of 7</string>
-    <string name="profile_missions">Daily missions</string>
-    <string name="profile_mission_apps">Open %1$d apps</string>
-    <string name="profile_mission_music">Open Music</string>
-    <string name="profile_mission_profile">Visit your profile</string>
-    <string name="profile_mission_progress">%1$d / %2$d</string>
-    <string name="profile_mission_ready">Ready · +%1$d XP</string>
-    <string name="profile_mission_claimed">Claimed</string>
-    <string name="profile_collection">Card collection</string>
-    <string name="profile_locked">Level %1$d</string>
-    <string name="profile_favourite">Favourite character</string>
-    <string name="profile_titles">Titles</string>
-    <string name="profile_event">Event</string>
-    <string name="profile_event_new">New</string>
-    <string name="profile_event_name">%1$s festival</string>
-    <string name="profile_event_window">1 – %1$d %2$s</string>
-    <string name="profile_loading">Loading</string>
-    <string name="profile_level_up">Level %1$d!</string>
-    <string name="profile_locked_toast">Unlocks at level %1$d</string>
-    <string name="profile_card_toast">%1$s · card %2$d of 8</string>
 
     <!-- Music row in the theme window. -->
     <string name="music">Music</string>

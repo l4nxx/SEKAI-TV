@@ -416,13 +416,6 @@
                     android:nextFocusDown="@+id/grid" />
 
                 <TextView
-                    android:id="@+id/btnProfile"
-                    style="@style/TopButton"
-                    android:text="@string/profile_pill"
-                    android:drawableStart="@drawable/ic_profile"
-                    android:nextFocusDown="@+id/grid" />
-
-                <TextView
                     android:id="@+id/btnSettings"
                     style="@style/TopButton"
                     android:text="@string/settings"

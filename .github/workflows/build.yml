@@ -1,0 +1,76 @@
+name: desktop-app
+
+# Builds the SEKAI TV desktop app for Windows, macOS and Linux.
+# A pushed tag (v*) also attaches the three binaries to that GitHub release.
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            asset: SEKAI-TV-windows.exe
+          - os: macos-latest
+            asset: SEKAI-TV-macos.zip
+          - os: ubuntu-latest
+            asset: SEKAI-TV-linux
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the build dependencies
+        run: python -m pip install --upgrade pip pyinstaller "adb_shell==0.4.4"
+
+      - name: Fetch the launcher APK from the latest release
+        shell: bash
+        run: |
+          curl -fsSL -o theme/sekai-home.apk \
+            "https://github.com/lucasperrin3010-lang/SEKAI-TV/releases/latest/download/sekai-home.apk" \
+            || echo "No APK in the latest release; the app will download it at install time."
+
+      - name: Build for Windows
+        if: runner.os == 'Windows'
+        shell: bash
+        run: |
+          pyinstaller --noconfirm --clean --onefile --windowed --name "SEKAI TV" --icon icon.ico \
+            --add-data "web;web" --add-data "theme;theme" --collect-submodules adb_shell app.py
+          cp "dist/SEKAI TV.exe" "SEKAI-TV-windows.exe"
+
+      - name: Build for macOS
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          pyinstaller --noconfirm --clean --onefile --windowed --name "SEKAI TV" \
+            --add-data "web:web" --add-data "theme:theme" --collect-submodules adb_shell app.py
+          ditto -c -k --sequesterRsrc --keepParent "dist/SEKAI TV.app" "SEKAI-TV-macos.zip"
+
+      - name: Build for Linux
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          pyinstaller --noconfirm --clean --onefile --windowed --name "SEKAI TV" \
+            --add-data "web:web" --add-data "theme:theme" --collect-submodules adb_shell app.py
+          cp "dist/SEKAI TV" "SEKAI-TV-linux"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.asset }}
+          path: app/${{ matrix.asset }}
+
+      - name: Attach the binary to the release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: app/${{ matrix.asset }}

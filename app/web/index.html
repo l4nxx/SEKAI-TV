@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEKAI TV</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <header class="band">
+    <span class="diamond" aria-hidden="true"></span>
+    <div class="brand">
+      <h1>SEKAI TV</h1>
+      <p>Choisis ta télé sur le réseau</p>
+    </div>
+    <button id="quit" class="pill">Fermer</button>
+    <span class="diamond" aria-hidden="true"></span>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Télés du réseau</h2>
+        <span id="progress" class="progress"></span>
+        <button id="rescan" class="pill small">Rechercher</button>
+      </div>
+      <div id="list" class="list" aria-live="polite"></div>
+      <p id="empty" class="empty" hidden>
+        Aucune télé trouvée pour l’instant.<br>
+        Vérifie qu’elle est allumée et sur le même réseau, et que le débogage réseau est activé.
+      </p>
+      <p id="error" class="error" hidden></p>
+    </section>
+
+    <aside class="panel side">
+      <h2>Sélection</h2>
+      <div id="chosen" class="chosen"></div>
+      <button id="install" class="pill wide" disabled>Installer le thème</button>
+      <div id="install-log" class="install-log" hidden></div>
+      <p class="hint">
+        La télé choisie est mémorisée sur ce PC. Le scan regarde le port ADB (5555) de chaque adresse
+        du réseau, et les télés qui répondent en DIAL (Chromecast).
+      </p>
+    </aside>
+  </main>
+
+  <footer>
+    <span id="network"></span>
+    <span>Serveur local, 127.0.0.1 uniquement</span>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>

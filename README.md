@@ -14,6 +14,7 @@ put it on a TV: an AI prompt and a manual tutorial.
 |---|---|
 | `launcher/` | The CleanYourTV launcher (`com.gathin.tvhome`) with the theme applied. Java, AndroidX, Gradle. |
 | `theme/sekai/config.json` | The theme's configuration: dock apps, wallpaper behaviour, colours, focus style, motion. |
+| `app/` | The desktop companion app: finds the TVs on the network, picks one, installs the theme. |
 | `PROMPT.md` | A prompt to paste into an AI coding agent, so it installs the theme for you. |
 | `TUTORIAL.md` | The same job by hand, step by step, with the exact commands. |
 
@@ -25,6 +26,13 @@ put it on a TV: an AI prompt and a manual tutorial.
 
 Both need ADB access to the TV and a computer that can build an Android app (JDK 17 and Android SDK 34, for
 example Android Studio).
+
+## The desktop app
+
+`app/` is a small Python program that finds the Android TVs on the local network, lets you pick one,
+and installs or updates this theme on it over ADB, with a window drawn in the same colours. Ready-made
+builds for Windows, macOS and Linux are on the [Releases](https://github.com/lucasperrin3010-lang/SEKAI-TV/releases)
+page; [app/README.md](app/README.md) covers running and building it.
 
 ## What is not here
 

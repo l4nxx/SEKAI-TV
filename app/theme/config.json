@@ -1,0 +1,29 @@
+{
+  "columns": 5,
+  "dock_apps": [
+    "com.android.vending",
+    "com.google.android.youtube.tv",
+    "com.netflix.ninja",
+    "com.amazon.amazonvideo.livingroom",
+    "com.spotify.tv.android"
+  ],
+  "fill_dock": true,
+  "hidden_apps": [
+    "com.mitv.gallery"
+  ],
+  "background_color": "#070B1D",
+  "wallpaper": true,
+  "wallpaper_dim": 0,
+  "dock_glass": true,
+  "dock_opacity": 70,
+  "dock_title": true,
+  "show_network_pill": true,
+  "icon_only_buttons": false,
+  "app_glow": false,
+  "ambient_glow": false,
+  "glow_style": "horizon",
+  "glass_style": "glass",
+  "focus_overshoot": false,
+  "advanced_effects": true,
+  "show_greeting": true
+}

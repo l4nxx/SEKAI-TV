@@ -774,7 +774,6 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         btnInputs = findViewById(R.id.btnInputs);
         View btnTheme = findViewById(R.id.btnTheme);
         View btnSettings = findViewById(R.id.btnSettings);
-        findViewById(R.id.btnProfile).setOnClickListener(v -> openProfile());
         btnTheme.setOnClickListener(v -> new ThemeSettingsDialog(this).show());
         btnInputs.setOnClickListener(v -> showInputs());
         btnWifi.setOnClickListener(v -> openNetworkPill());
@@ -1015,7 +1014,6 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     protected void onResume() {
         super.onResume();
         resumed = true;
-        updateProfileBadge();
         // A festival that started or ended while Home was in the background: rebuild with or without it.
         if (festive != festival.active(LocalDate.now())) {
             recreate();
@@ -3562,29 +3560,6 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     @Override
     public void onOpenInput(String inputId) {
         openInput(inputId);
-    }
-
-    /** A tile was opened: the profile's daily mission counts it, and Music counts its own. */
-    @Override
-    public void onTileOpened(String pkg) {
-        Player.appOpened(this, pkg);
-        updateProfileBadge();
-    }
-
-    /** The profile pill: the page opens with the theme's sparkles, and the visit counts for the mission. */
-    private void openProfile() {
-        Player.profileOpened(this);
-        updateProfileBadge();
-        startActivity(new Intent(this, ProfileActivity.class));
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-    }
-
-    /** A dot on the profile pill while a login bonus or a daily mission waits to be claimed. */
-    private void updateProfileBadge() {
-        TextView pill = findViewById(R.id.btnProfile);
-        if (pill == null) return;
-        pill.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_profile, 0,
-                Player.load(this).anyToClaim() ? R.drawable.ic_alert_dot : 0, 0);
     }
 
     /**
