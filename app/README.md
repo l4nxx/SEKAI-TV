@@ -28,6 +28,11 @@ On Windows use `;` instead of `:` in `--add-data`, and add `--icon icon.ico`. Th
 `.github/workflows/build.yml` builds all three platforms and attaches them to a release when a `v*` tag
 is pushed.
 
+The release builds are unsigned: macOS refuses the first launch of an unsigned app (right-click it and
+choose **Open**, or `xattr -dr com.apple.quarantine "SEKAI TV.app"`), and the macOS binary is built for
+Apple Silicon. On Linux, make the downloaded file executable (`chmod +x SEKAI-TV-linux`). The app opens
+its window in Chrome, Chromium, Edge or Brave, so one of them has to be installed.
+
 ## What the install button does
 
 1. connects to the selected TV over ADB, on port 5555;
