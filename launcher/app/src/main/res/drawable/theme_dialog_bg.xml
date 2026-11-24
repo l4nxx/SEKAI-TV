@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The Theme window's card: the launcher's white panel with its navy edge. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#FFFAFAFD" />
+    <stroke
+        android:width="3dp"
+        android:color="#FF3E3E5C" />
+    <corners android:radius="20dp" />
+</shape>

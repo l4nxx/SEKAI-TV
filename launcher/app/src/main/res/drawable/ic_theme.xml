@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The Theme tab's mark: the four-point sparkle of the Sekai key art. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="22dp"
+    android:height="22dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,2.2 L14.4,9.6 L21.8,12 L14.4,14.4 L12,21.8 L9.6,14.4 L2.2,12 L9.6,9.6 Z" />
+</vector>

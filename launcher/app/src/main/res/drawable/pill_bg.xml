@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The game's flat white panel look: solid white, a navy edge. Focus is the teal of the header band. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFFFF" />
+            <!-- Teal here would vanish into the teal header band: focus is the thick navy edge. -->
+            <stroke android:width="4dp" android:color="#FF3E3E5C" />
+            <corners android:radius="22dp" />
+        </shape>
+    </item>
+    <!-- Reorder button while reorder mode is on (focus is on the tiles then). -->
+    <item android:state_activated="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#FF00CCBB" />
+            <stroke android:width="2dp" android:color="#FF3E3E5C" />
+            <corners android:radius="22dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFFFF" />
+            <stroke android:width="2dp" android:color="#FF545179" />
+            <corners android:radius="22dp" />
+        </shape>
+    </item>
+</selector>

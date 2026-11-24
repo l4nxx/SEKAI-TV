@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The all-apps grid's card: the game's white panel with a navy edge, and the teal ring on focus. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFFFF" />
+            <stroke android:width="4dp" android:color="#FF00CCBB" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFFFF" />
+            <stroke android:width="2dp" android:color="#FF545179" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+</selector>

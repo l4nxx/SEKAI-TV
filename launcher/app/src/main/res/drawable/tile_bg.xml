@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A white panel with the game's navy edge; the banner sits 4dp in, so the frame reads around it. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#FFFFFFFF" />
+    <stroke android:width="3dp" android:color="#FF545179" />
+    <corners android:radius="14dp" />
+</shape>

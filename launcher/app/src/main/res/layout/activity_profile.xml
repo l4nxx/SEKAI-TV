@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The profile page: teal band with drifting sparkles, white panels with a navy edge, navy capitals.
+     Level and title, the event of the month, the login bonus, three daily missions, the card
+     collection, the favourite character and the titles. Everything is driven by the remote. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/profileRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF070B1D">
+
+    <LinearLayout
+        android:id="@+id/profileContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:background="#FF00CCBB">
+
+            <com.gathin.tvhome.SparkView
+                android:id="@+id/sparkView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:importantForAccessibility="no" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="48dp"
+                android:paddingEnd="40dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_band_diamond" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@string/font_medium"
+                    android:letterSpacing="0.16"
+                    android:singleLine="true"
+                    android:text="@string/profile_pill"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="26sp" />
+
+                <TextView
+                    android:id="@+id/btnProfileClose"
+                    style="@style/TopButton"
+                    android:text="@string/all_apps_close" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="26dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_band_diamond" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="24dp"
+            android:overScrollMode="never"
+            android:paddingStart="48dp"
+            android:paddingEnd="48dp"
+            android:paddingTop="22dp"
+            android:paddingBottom="28dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/theme_dialog_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:id="@+id/profileAvatar"
+                        android:layout_width="74dp"
+                        android:layout_height="74dp"
+                        android:background="@drawable/profile_avatar"
+                        android:fontFamily="@string/font_medium"
+                        android:gravity="center"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/profileName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@string/font_medium"
+                            android:letterSpacing="0.08"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="#FF3E3E5C"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:id="@+id/profileTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@string/font_medium"
+                            android:letterSpacing="0.18"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="#FF00A79B"
+                            android:textSize="11sp" />
+
+                        <ProgressBar
+                            android:id="@+id/profileXp"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:layout_marginTop="14dp"
+                            android:max="100"
+                            android:progressBackgroundTint="#FFE3E7F2"
+                            android:progressTint="#FF00CCBB" />
+
+                        <TextView
+                            android:id="@+id/profileXpText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="@string/font_medium"
+                            android:letterSpacing="0.1"
+                            android:textColor="#993E3E5C"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/profileLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/theme_lang_bg"
+                        android:fontFamily="@string/font_medium"
+                        android:letterSpacing="0.1"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textAllCaps="true"
+                        android:textColor="#FF3E3E5C"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/theme_dialog_bg"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/SettingsLabel"
+                            android:layout_width="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/profile_event" />
+
+                        <TextView
+                            android:id="@+id/eventNew"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:background="@drawable/pill_bg"
+                            android:fontFamily="@string/font_medium"
+                            android:gravity="center"
+                            android:letterSpacing="0.14"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="14dp"
+                            android:text="@string/profile_event_new"
+                            android:textAllCaps="true"
+                            android:textColor="#FF3E3E5C"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/eventName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@string/font_medium"
+                        android:letterSpacing="0.06"
+                        android:singleLine="true"
+                        android:textAllCaps="true"
+                        android:textColor="#FF3E3E5C"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/eventWindow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="#993E3E5C"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/theme_dialog_bg"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        style="@style/SettingsLabel"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/profile_bonus" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView android:id="@+id/bonus1" style="@style/ProfileStamp" android:text="1" />
+                        <TextView android:id="@+id/bonus2" style="@style/ProfileStamp" android:text="2" />
+                        <TextView android:id="@+id/bonus3" style="@style/ProfileStamp" android:text="3" />
+                        <TextView android:id="@+id/bonus4" style="@style/ProfileStamp" android:text="4" />
+                        <TextView android:id="@+id/bonus5" style="@style/ProfileStamp" android:text="5" />
+                        <TextView android:id="@+id/bonus6" style="@style/ProfileStamp" android:text="6" />
+                        <TextView android:id="@+id/bonus7" style="@style/ProfileStamp" android:layout_marginEnd="0dp" android:text="7" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/bonusRow"
+                        style="@style/SettingsRow"
+                        android:layout_marginTop="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/theme_dialog_bg"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        style="@style/SettingsLabel"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/profile_missions" />
+
+                    <TextView
+                        android:id="@+id/missionApps"
+                        style="@style/SettingsRow"
+                        android:layout_marginTop="10dp" />
+
+                    <TextView
+                        android:id="@+id/missionMusic"
+                        style="@style/SettingsRow"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:id="@+id/missionProfile"
+                        style="@style/SettingsRow"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/theme_dialog_bg"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        style="@style/SettingsLabel"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/profile_collection" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <FrameLayout android:id="@+id/card0" style="@style/ProfileCard">
+                            <LinearLayout style="@style/ProfileCardBody">
+                                <View style="@style/ProfileCardArt" />
+                                <TextView style="@style/ProfileCardName" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout android:id="@+id/card1" style="@style/ProfileCard">
+                            <LinearLayout style="@style/ProfileCardBody">
+                                <View style="@style/ProfileCardArt" />
+                                <TextView style="@style/ProfileCardName" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout android:id="@+id/card2" style="@style/ProfileCard">
+                            <LinearLayout style="@style/ProfileCardBody">
+                                <View style="@style/ProfileCardArt" />
+                                <TextView style="@style/ProfileCardName" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout android:id="@+id/card3" style="@style/ProfileCard">
+                            <LinearLayout style="@style/ProfileCardBody">
+                                <View style="@style/ProfileCardArt" />
+                                <TextView style="@style/ProfileCardName" />
+                            </LinearLayout>
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <FrameLayout android:id="@+id/card4" style="@style/ProfileCard">
+                            <LinearLayout style="@style/ProfileCardBody">
+                                <View style="@style/ProfileCardArt" />
+                                <TextView style="@style/ProfileCardName" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout android:id="@+id/card5" style="@style/ProfileCard">
+                            <LinearLayout style="@style/ProfileCardBody">
+                                <View style="@style/ProfileCardArt" />
+                                <TextView style="@style/ProfileCardName" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout android:id="@+id/card6" style="@style/ProfileCard">
+                            <LinearLayout style="@style/ProfileCardBody">
+                                <View style="@style/ProfileCardArt" />
+                                <TextView style="@style/ProfileCardName" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout android:id="@+id/card7" style="@style/ProfileCard">
+                            <LinearLayout style="@style/ProfileCardBody">
+                                <View style="@style/ProfileCardArt" />
+                                <TextView style="@style/ProfileCardName" />
+                            </LinearLayout>
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/theme_dialog_bg"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        style="@style/SettingsLabel"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/profile_favourite" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView android:id="@+id/char0" style="@style/ProfileChip" />
+                        <TextView android:id="@+id/char1" style="@style/ProfileChip" />
+                        <TextView android:id="@+id/char2" style="@style/ProfileChip" />
+                        <TextView android:id="@+id/char3" style="@style/ProfileChip" />
+                        <TextView android:id="@+id/char4" style="@style/ProfileChip" android:layout_marginEnd="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/theme_dialog_bg"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        style="@style/SettingsLabel"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/profile_titles" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView android:id="@+id/title0" style="@style/ProfileChip" />
+                        <TextView android:id="@+id/title1" style="@style/ProfileChip" />
+                        <TextView android:id="@+id/title2" style="@style/ProfileChip" />
+                        <TextView android:id="@+id/title3" style="@style/ProfileChip" />
+                        <TextView android:id="@+id/title4" style="@style/ProfileChip" android:layout_marginEnd="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- The themed loading screen: the page is behind it for a moment, then it fades away. -->
+    <LinearLayout
+        android:id="@+id/profileLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF070B1D"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@string/font_medium"
+            android:letterSpacing="0.3"
+            android:text="@string/profile_pill"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFFFF"
+            android:textSize="30sp" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="260dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="22dp"
+            android:indeterminate="true"
+            android:indeterminateTint="#FF00CCBB" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@string/font_medium"
+            android:letterSpacing="0.24"
+            android:text="@string/profile_loading"
+            android:textAllCaps="true"
+            android:textColor="#B3FFFFFF"
+            android:textSize="11sp" />
+    </LinearLayout>
+</FrameLayout>

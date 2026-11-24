@@ -1,0 +1,16 @@
+# Build output
+build/
+.gradle/
+*.apk
+*.aab
+*.iml
+.idea/
+
+# Local machine paths (SDK, JDK)
+local.properties
+
+# Media that stays on the owner's computer
+*.mp3
+*.jpg
+*.png
+*.log

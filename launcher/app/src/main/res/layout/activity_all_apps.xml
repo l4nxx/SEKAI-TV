@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/allAppsRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- The sheet the opening animation paints: white like the dock, turning navy as it grows. The
+         activity sets this background in code so both can be animated together. -->
+    <LinearLayout
+        android:id="@+id/allAppsContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- The same teal band as Home, so the list reads as another screen of the launcher. -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="#FF00CCBB">
+
+            <TextView
+                android:id="@+id/allAppsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="56dp"
+                android:layout_marginEnd="200dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:text="@string/all_apps"
+                android:textColor="#FFFFFFFF"
+                android:textSize="22sp"
+                android:fontFamily="@string/font_medium"
+                android:letterSpacing="0.18"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/btnAllAppsClose"
+                style="@style/TopButton"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="56dp"
+                android:text="@string/all_apps_close"
+                android:drawableStart="@drawable/ic_chevron_down" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/allAppsGrid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="48dp"
+                android:paddingEnd="48dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="24dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:scrollbars="none" />
+
+            <TextView
+                android:id="@+id/allAppsEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/library_empty"
+                android:textColor="#CCFFFFFF"
+                android:textSize="18sp"
+                android:fontFamily="@string/font_regular"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

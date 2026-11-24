@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Musique TV</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="wallpaper"></div>
+  <div class="scrim"></div>
+
+  <header class="band">
+    <span class="diamond"></span>
+    <div class="titles">
+      <h1>Musique</h1>
+      <p>Ajouter des titres à la TV · hors ligne</p>
+    </div>
+    <div class="tv" id="tv">
+      <span class="dot" id="tvDot"></span>
+      <span id="tvName">Connexion…</span>
+    </div>
+    <button class="pill" id="quit" title="Fermer l'app">Quitter</button>
+    <span class="diamond"></span>
+  </header>
+
+  <main>
+    <section class="card selection">
+      <div class="kicker">Ma sélection <span class="count" id="selCount"></span></div>
+
+      <div class="dropzone" id="dropzone">
+        <strong>Glisse tes fichiers ici</strong>
+        <small>ou clique pour parcourir — plusieurs morceaux à la fois (mp3, m4a, flac, ogg, wav…)</small>
+        <input type="file" id="picker" multiple hidden
+               accept=".mp3,.m4a,.aac,.ogg,.opus,.flac,.wav,.mp4,audio/*">
+      </div>
+
+      <div class="list" id="selList"></div>
+
+      <div class="foot">
+        <button class="pill" id="clear">Vider</button>
+        <span class="muted" id="selHint">Rien de choisi pour l'instant</span>
+      </div>
+    </section>
+
+    <section class="card library">
+      <div class="kicker">Sur la TV <span class="count" id="tvCount"></span></div>
+      <div class="list" id="tvList"></div>
+
+      <div class="address">
+        <label for="host">Adresse de la TV</label>
+        <input id="host" spellcheck="false" autocomplete="off">
+        <button class="pill" id="test">Tester</button>
+      </div>
+
+      <button class="cta" id="send">Envoyer sur la TV</button>
+      <div class="bar"><div class="fill" id="bar"></div></div>
+      <div class="log" id="log"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

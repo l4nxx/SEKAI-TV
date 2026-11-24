@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Musique</string>
+
+    <string name="header_title">Musique</string>
+    <!-- Shown under the title; the count is filled in by the activity. -->
+    <string name="header_subtitle">Hors ligne · %1$s</string>
+    <string name="header_tracks_zero">aucun titre</string>
+    <string name="header_tracks">%1$d titres</string>
+    <string name="header_track">%1$d titre</string>
+
+    <string name="refresh">Actualiser</string>
+    <string name="quit">Quitter</string>
+
+    <string name="now_playing">En lecture</string>
+    <string name="nothing_playing">Choisis un titre à droite</string>
+    <string name="unknown_artist">Artiste inconnu</string>
+    <string name="position_and_duration">%1$s / %2$s</string>
+
+    <string name="library">Ma bibliothèque</string>
+    <string name="empty_title">Aucun titre pour l\'instant</string>
+    <string name="empty_body">Dépose tes fichiers (mp3, m4a, flac…) dans\n%1$s\npuis appuie sur ACTUALISER. Aucune connexion n\'est utilisée.</string>
+    <string name="loading">Lecture du dossier…</string>
+
+    <string name="shuffle">Aléatoire</string>
+    <string name="repeat_all">Répéter : tout</string>
+    <string name="repeat_one">Répéter : un</string>
+    <string name="repeat_off">Répéter : non</string>
+
+    <string name="night_mode">Mode nuit</string>
+    <string name="night_hint">Appuie sur une touche pour revenir\nla musique continue</string>
+
+    <string name="back_ten">− 10 s</string>
+    <string name="forward_ten">+ 10 s</string>
+
+    <string name="back_ten_cd">Reculer de dix secondes</string>
+    <string name="forward_ten_cd">Avancer de dix secondes</string>
+    <string name="play_cd">Lire</string>
+    <string name="pause_cd">Mettre en pause</string>
+    <string name="previous_cd">Titre précédent</string>
+    <string name="next_cd">Titre suivant</string>
+    <string name="disc_cd">Disque</string>
+</resources>
