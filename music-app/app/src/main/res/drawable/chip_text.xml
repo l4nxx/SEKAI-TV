@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Navy letters on the white pills, as in the game's body text. -->
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_focused="true" android:color="#FF3E3E5C" />
-    <item android:color="#FF3E3E5C" />
-</selector>
